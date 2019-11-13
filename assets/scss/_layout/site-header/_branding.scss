@@ -1,0 +1,21 @@
+/// Site Branding/Logo
+/// @author Kevin Kendle
+/// @group Site Header
+/// @since v3.0.0
+.c-siteBranding {
+  flex: 1 1 auto;
+  margin-right: $space__3;
+  max-width: 400px;
+
+  &__link {
+    box-shadow: none;
+    display: inline-block;
+    padding-bottom: $space__default;
+    padding-top: $space__default;
+
+    &:hover,
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}

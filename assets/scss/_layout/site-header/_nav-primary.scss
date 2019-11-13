@@ -1,0 +1,43 @@
+/// Primary site navigation
+/// @author Kevin Kendle
+/// @group Site Header
+/// @since v3.0.0
+.c-navigation__primary {
+  background-color: $theme__header--primary;
+  background-color: var(--theme__header--primary);
+  padding-left: $vr__05;
+  padding-left: var(--vr__05);
+  padding-right: $vr__05;
+  padding-right: var(--vr__05);
+  @include for-palm-up {
+    padding-left: $vr__1;
+    padding-left: var(--vr__1);
+    padding-right: $vr__1;
+    padding-right: var(--vr__1);
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    @include for-wrist-up {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  .page_item {
+
+    a {
+      margin-bottom: $space__2;
+      margin-bottom: var(--space__2);
+      padding: $space__2 $space__2 $space__1;
+      padding: var(--space__2) var(--space__2) var(--space__1);
+    }
+  }
+
+  #navigation__primary {
+    @include for-lap-until {
+      display: none;
+    }
+  }
+}

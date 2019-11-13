@@ -1,0 +1,16 @@
+/// Link overlaying a Google Map view.
+/// @author Kevin Kendle
+/// @group Components
+/// @since v2.0.0
+.c-google-maps-embed {
+  position: relative;
+  margin: $space__4;
+  margin: var(--space__4);
+
+  &__link {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 5;
+  }
+}

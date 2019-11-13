@@ -1,0 +1,20 @@
+/// Increase font-size of first paragraph.
+/// @example
+///   _copy.scss
+/// @author Kevin Kendle
+/// @group Components
+/// @name First Paragraph
+/// @since v2.0.0
+.c-pageHeader,
+.c-homePageHeader .c-homePageHeader__primaryCopy {
+
+  p:first-of-type {
+    font-family: $font__body;
+    font-size: 1.5625em;
+    @include bp-2-5 {
+      font-size: 2em;
+      line-height: 1.2;
+      margin-bottom: 28px;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+/// Button component styles. Contains Primary and Secondary styles.
+///
+/// The "--noStyle" is primarily used for modal 'X' or similar where it should have the accessible functionality of a button, but removes the base styles.
+/// These styles can be used on links or buttons.
+///
+/// Use a `<button>` if it is performing an action, such as submitting a form.
+/// Use a `<a>` if it is directing the user to another page.
+///
+/// * CTA's in hero images often go to another page. Therefore they should be links, `<a>`.
+/// * A Modal close icon often closes the modal. Therefore it should be a `<button>`.
+/// @author Kevin Kendle
+/// @group Components
+/// @since v2.0.0
+.c-button {
+  $self: &;
+  --button__background: var(--color__primary);
+  --button__border: var(--color__primary);
+  --button__color: var(--color__copy);
+  background-color: $color__primary;
+  background-color: var(--button__background);
+  border-color: $color__primary;
+  border-color: var(--button__border);
+  border-radius: 0;
+  border-style: solid;
+  border-width: .1111rem;
+  color: $color__primary;
+  color: var(--button__color);
+  cursor: pointer;
+  margin-bottom: $space__4;
+  margin-bottom: var(--space__4);
+  min-width: 120px;
+  padding: .85rem 1.5rem .65rem;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:not(:last-of-type) {
+    margin-right: $space__default;
+  }
+
+  &__primary {
+
+    &:hover,
+    &:focus,
+    &._hover,
+    &._focus {
+      background-color: $color__white;
+      --button__background: var(--color__white);
+    }
+  }
+
+  &__secondary {
+    background-color: transparent;
+    border-color: $color__secondary;
+    color: $color__copy;
+
+    &:hover,
+    &:focus,
+    &._hover,
+    &._focus {
+      background-color: $color__secondary;
+      background-color: var(--button__background);
+    }
+  }
+
+  &--noStyle {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+  }
+
+  //------------
+  // FORM
+  //------------
+  // Gravity Forms
+  &.gform_button {
+    margin-bottom: 0;
+  }
+}

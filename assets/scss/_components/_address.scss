@@ -1,0 +1,17 @@
+/// Address component styles.
+/// @author Kevin Kendle
+/// @group Components
+/// @since v2.0.0
+.c-address {
+  font-style: normal;
+
+  &__street,
+  &__state,
+  &__phone,
+  &__email,
+  &__site,
+  &__fax {
+    display: block;
+    word-break: break-all;
+  }
+}

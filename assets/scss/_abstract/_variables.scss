@@ -1,0 +1,101 @@
+//------------
+// COLORS
+//------------
+// also in _base.scss for CSS Custom Variables
+$white: hsl(0, 0%, 100%);
+$purple-1: hsl(270.6, 43.4%, 52.2%);
+$cream-1: hsl(20, 75%, 95.3%);
+$dreamsicle: hsl(18.1, 100%, 68.8%);
+$gray-1: hsl(232, 10.2%, 28.8%);
+$red-1: hsl(0, 67.2%, 47.8%);
+
+//------------
+// THEME COLORS
+//------------
+/// @group Base
+/// @type Map
+/// @prop {Color} color__primary [hsl(270.6, 43.4%, 52.2%)] - Main, default color
+/// @prop {Color} color__secondary [hsl(18.1, 100%, 68.8%)] - Secondary color
+/// @prop {Color} color__copy [hsl(232, 10.2%, 28.8%)] - Default text color
+/// @prop {Color} color__copy--mute [hsl(232, 10.2%, 28.8%)] - Secondary text for Dates and Category Names
+/// @prop {Color} color__white [hsl(0, 0, 100%)] - White, for general Page background
+/// @prop {Color} color__cream [hsl(20, 75%, 95.3%)] - Cream, for Background Pattern
+/// @prop {Color} color__red [hsl(0, 67.2%, 47.8%)] - Red, for Required or Errors
+/// @todo * change accent to secondary
+$color__primary: $purple-1;
+$color__secondary: $dreamsicle;
+$color__copy: $gray-1;
+$color__copy--mute: $gray-1;
+$color__white: $white;
+$color__cream: $cream-1;
+$color__red: $red-1;
+
+// theme colors
+$theme__header--secondary: $color__white;
+$theme__header--primary: $color__white;
+
+//------------
+// TYPOGRAPHY
+//------------
+/// @group Base
+/// @type Map
+/// @prop {Typeface} overpass [overpass]
+/// @prop {Typeface} portada [portada]
+$overpass: 'Overpass', sans-serif;
+$portada: portada-text, serif;
+
+$font__header: $portada;
+$font__body: $overpass;
+
+//------------
+// ELEMENT SPACING
+//------------
+// SOURCE https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62#deba
+// spacing
+$space__1: .25rem;
+$space__2: .5rem;
+$space__3: 1rem;
+$space__4: 1.5rem;
+$space__5: 2rem;
+$space__6: 3rem;
+$space__7: 4rem;
+$space__default: $space__3;
+
+/* typography */
+$baseFontSize: 1.125rem; /* 18px */
+$baseline: 1.4;
+$letterspacing__caps: .05em; // for uppercase copy
+
+/* baseline amounts */
+$vr__05: calc(1rem * (#{$baseline} * .5));
+$vr__1: calc(1rem * #{$baseline});
+$vr__15: calc(1rem * (#{$baseline} * 1.5));
+$vr__2: calc(1rem * (#{$baseline} * 2));
+$vr__25: calc(1rem * (#{$baseline} * 2.5));
+$vr__3: calc(1rem * (#{$baseline} * 3));
+$vr__4: calc(1rem * (#{$baseline} * 4));
+$vr__default: $vr__1;
+
+// gutter
+$gutter: 3rem;
+
+//------------
+// Z-INDEX STACKING
+//------------
+$zIndex--sm: 1;
+$zIndex--md: 5;
+$zIndex--lg: 10;
+$zIndex__nav: 100;
+$zIndex__nav--close: 105;
+$zIndex__tooltip: 150;
+$zIndex__modal: 1000;
+
+//------------
+// BOX-SHADOW STACKING
+//------------
+$color__shadow: $color__copy;
+// flows CLOSEST from screen to FURTHEST
+$bs__inputs: 0 1px 1px $color__shadow; // for buttons, inputs
+$bs__panels--small: 0 3px 4px -1px $color__shadow; // for dropdowns, small panels
+$bs__panels--large: 0 8px 12px -4px $color__shadow; // for large panels
+$bs__modals: 0 25px 37px -6px $color__shadow; // for modals

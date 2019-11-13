@@ -1,0 +1,42 @@
+/// Styles for the slider arrows.
+/// @author Kevin Kendle
+/// @deprecated
+/// @group Slider
+/// @since v2.0.0
+.slick-arrow {
+  background: transparent;
+  border: none;
+  color: transparent;
+  display: block;
+  height: 20px;
+  line-height: 0;
+  outline: none;
+  padding: 0;
+  position: absolute;
+  top: 45%;
+  transform: translate(0, -50%);
+  width: 20px;
+  z-index: 100;
+
+  &:hover,
+  &:focus {
+    background: transparent;
+    color: transparent;
+  }
+}
+
+.slick-prev {
+  left: 1em;
+
+  &::before {
+    @include arrow(left);
+  }
+}
+
+.slick-next {
+  right: 1em;
+
+  &::before {
+    @include arrow();
+  }
+}

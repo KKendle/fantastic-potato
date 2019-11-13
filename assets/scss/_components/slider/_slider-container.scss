@@ -1,0 +1,9 @@
+/// Center slider container
+/// @author Kevin Kendle
+/// @group Slider
+/// @since v2.0.0
+
+.c-slider__container {
+  $self: &;
+  margin: auto;
+}

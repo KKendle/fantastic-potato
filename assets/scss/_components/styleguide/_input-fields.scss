@@ -1,0 +1,61 @@
+// STYLES FOR STYLEGUIDE ONLY
+.page-template-template-styleguide {
+
+  // gravity forms form
+  .l-section__input-fields {
+
+    ._styleguide-form-container {
+      background-color: $color__primary;
+      background-color: var(--color__primary);
+      display: inline-block;
+      padding: 2rem;
+      max-width: 100%;
+
+      .gfield_label {
+        font-size: 1.5625rem;
+      }
+    }
+
+    .gform_footer {
+      display: none;
+    }
+
+    .gform_fields {
+      $pop-fs-lg: 1.5625rem;
+      padding-left: 0;
+
+      .gfield.c-input__field {
+        list-style: none;
+        margin-bottom: 2rem;
+
+        input {
+          background: none;
+          border-color: $color__white;
+          color: $color__white;
+          max-width: 100%;
+          @include for-lap-up {
+            font-size: $pop-fs-lg;
+          }
+
+          &[aria-invalid='true'] {
+            border-color: $color__red;
+          }
+        }
+
+        &._form--error {
+
+          input {
+            border-color: $color__red;
+          }
+        }
+
+        .gfield_label {
+          color: $color__white;
+          @include for-lap-up {
+            font-size: $pop-fs-lg;
+          }
+        }
+      }
+    }
+  }
+}

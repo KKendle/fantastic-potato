@@ -1,0 +1,39 @@
+/// Link overlaying a Google Map view.
+/// @author Kevin Kendle
+/// @deprecated
+/// @group Slider
+/// @since v2.0.0
+.slick-dots {
+  $self: &;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  margin: 1em;
+  padding: 0;
+
+  button {
+    background-color: transparent;
+    border: 0;
+    color: $color__copy;
+    color: var(--color__copy);
+    cursor: pointer;
+    font-family: $font__body;
+    padding: .75rem $space__3;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  li {
+    margin: 0 .25em;
+  }
+
+  .slick-active {
+
+    button {
+      text-decoration: underline;
+    }
+  }
+}

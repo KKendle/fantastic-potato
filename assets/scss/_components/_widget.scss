@@ -1,0 +1,6 @@
+.c-widget {
+  $self: &;
+  flex: 1 1 200px;
+  margin-bottom: $vr__default;
+  margin-bottom: var(--vr__default);
+}

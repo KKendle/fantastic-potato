@@ -1,0 +1,29 @@
+/// Remove `<ul>` browser styling
+/// @author Kevin Kendle
+/// @group Form
+/// @since v2.0.0
+.gform_body {
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+/// Gravity Form error and message style.
+/// @author Kevin Kendle
+/// @group Form
+/// @since v2.0.0
+.validation_error,
+.validation__message {
+  color: $color__copy;
+}
+
+/// Gravity Form error message spacing.
+/// @author Kevin Kendle
+/// @group Form
+/// @since v2.0.0
+.validation_error {
+  margin: $space__stack--md;
+}

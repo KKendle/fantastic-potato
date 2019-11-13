@@ -1,0 +1,29 @@
+/// Background component styles. Full width background with optional pattern.
+/// @author Kevin Kendle
+/// @group Components
+/// @since v2.0.0
+.c-background {
+
+  &__image,
+  &__pattern {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    background-position: center;
+  }
+
+  &__image {
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__pattern {
+    background-color: $cream-1;
+    background-image: url('../images/__temp/bg/cp-pat-3.png'), url('../images/__temp/bg/cp-pat-4.png');
+    background-size: 100px;
+    background-position: 0 0, -3px 21px;
+  }
+}

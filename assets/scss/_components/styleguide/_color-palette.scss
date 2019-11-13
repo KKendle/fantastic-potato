@@ -1,0 +1,92 @@
+// STYLES FOR STYLEGUIDE ONLY
+.page-template-template-styleguide {
+
+  .l-section__color-palette {
+    $styleguide__font: 'Heebo', sans-serif;
+    $swatch-border-size: 2px;
+
+    .c-styleguideList {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .c-swatch {
+      $self: &;
+      margin-right: $space__3;
+      position: relative;
+
+      &__border {
+        border: $swatch-border-size solid $gray-1;
+      }
+
+      &__hex {
+        color: $color__copy;
+        left: 50%;
+        font-family: $styleguide__font;
+        font-size: 1.875rem;
+        font-weight: 700;
+        margin: 0;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        text-align: center;
+      }
+
+      &__color {
+        background-color: var(--swatchColor, transparent);
+        height: 185px;
+        margin-bottom: $space__2;
+        max-width: 100%;
+        width: 340px;
+
+        // &--black-1 {
+        //   background-color: $color__copy;
+        //   --swatchColor: var(--color__copy);
+
+        //   .c-swatch__hex {
+        //     color: $color__white;
+        //     color: var(--color__white);
+        //   }
+        // }
+
+        // &--gray-1 {
+        //   background-color: $color__copy--mute;
+        //   --swatchColor: var(--color__copy--mute);
+
+        //   .c-swatch__hex {
+        //     color: $color__white;
+        //     color: var(--color__white);
+        //   }
+        // }
+
+        // &--white {
+        //   background-color: $white;
+        //   --swatchColor: var(--color__white);
+        // }
+
+        // &--blue {
+
+        //   .c-swatch__color {
+        //     background-color: $blue-1;
+        //     --swatchColor: var(--color__primary);
+        //   }
+
+        //   .c-swatch__hex {
+        //     color: $color__white;
+        //     color: var(--color__white);
+        //   }
+        // }
+
+        // &--green {
+        //   background-color: $green-1;
+        //   --swatchColor: var(--color__secondary);
+        // }
+
+        // &--cream {
+        //   background-color: $cream-1;
+        //   --swatchColor: var(--color__cream);
+        // }
+      }
+    }
+  }
+}

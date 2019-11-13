@@ -1,0 +1,34 @@
+/// Secondary site navigation. This is NOT for the burger nav styles. See `_nav-full.scss` for burger nav styles.
+/// @author Kevin Kendle
+/// @group Site Header
+/// @since v3.0.0
+.c-socialLinks {
+  $self: &;
+  $social--bg: $color__primary;
+  --social--bg: var(--color__primary);
+  flex-wrap: wrap;
+
+  &__link {
+    align-items: center;
+    box-shadow: none;
+    display: flex;
+    margin-bottom: $vr__05;
+    margin-bottom: var(--vr__05);
+
+    &:hover,
+    &:focus {
+      box-shadow: none;
+      color: $social--bg; // uses currentColor in svg
+      color: var(--social--bg); // uses currentColor in svg
+    }
+
+    &:not(:last-child) {
+      margin-right: $space__2;
+      margin-right: var(--space__2);
+    }
+
+    svg {
+      border-radius: 50%;
+    }
+  }
+}

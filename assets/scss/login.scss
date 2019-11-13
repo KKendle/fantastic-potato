@@ -1,0 +1,73 @@
+//------------
+// ABSTRACTS
+//------------
+@import '_abstract/breakpoints';
+@import '_abstract/variables';
+@import '_abstract/mixins';
+
+.login {
+  // colors
+  --color__white: hsl(0, 0, 100%);
+  --color__primary: hsl(202, 73%, 40%);
+  --color__secondary: hsl(74, 60%, 63%);
+  --color__copy: hsl(0, 0%, 20%);
+  $self: &;
+
+  #login {
+    max-width: 320px;
+    width: 100%;
+  }
+
+  h1 a {
+    background-image: url('../images/logo.png');
+    background-position: center center;
+    background-size: 240px;
+    width: 240px;
+  }
+
+  form .button-primary {
+    background-color: $color__secondary;
+    background-color: var(--color__secondary);
+    border-width: .125em;
+    border-style: solid;
+    border-color: $color__secondary;
+    border-color: var(--color__secondary);
+    border-radius: 0;
+    box-shadow: none;
+    color: $color__copy;
+    color: var(--color__copy);
+    font-family: $font__body;
+    text-shadow: none;
+
+    &:hover,
+    &:focus {
+      background-color: $color__white;
+      background-color: var(--color__white);
+    }
+  }
+
+  label {
+    color: $color__copy;
+    color: var(--color__copy);
+  }
+
+  #backtoblog a,
+  #nav a {
+    color: $color__primary;
+    color: var(--color__primary);
+
+    &:hover,
+    &:focus {
+      color: $color__primary;
+      color: var(--color__primary);
+      text-decoration: underline;
+    }
+  }
+
+  .created-by {
+    font-size: 13px;
+    margin: 16px auto;
+    padding: 0 24px;
+    max-width: 280px;
+  }
+}

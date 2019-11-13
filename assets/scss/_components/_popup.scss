@@ -1,0 +1,76 @@
+/// Modal popup styles. For the plugin Popups - WordPress Popup by timersys
+/// @author Kevin Kendle
+/// @group Components
+/// @since v3.0.0
+/// todo
+///   * probably can remove the majority of this
+.spu-box {
+  $self: &;
+  $pop-fs-lg: 1.5625em;
+  background-color: $color__primary !important;
+  box-shadow: 0 3px 15px $color__copy;
+  max-width: 47.5em !important;
+  padding: $space__4 !important;
+  padding-top: $space__5 !important;
+  width: 90% !important;
+  @include bp-2 {
+    padding: $space__7 !important;
+  }
+
+  .validation_error,
+  .validation_message {
+    color: $color__white;
+    font-size: 1rem;
+    @include bp-3 {
+      font-size: 1.5625rem;
+    }
+  }
+
+  p {
+    color: $color__white;
+    max-width: 34.375em;
+    @include bp-3 {
+      font-size: $pop-fs-lg;
+    }
+  }
+
+  .gfield_no_follows_desc.field_description_below {
+    margin-bottom: $space__4;
+    @include bp-3 {
+      font-family: $font__header;
+      font-size: 1.2em;
+      font-weight: 300;
+    }
+  }
+
+  .gform_heading {
+    display: none;
+  }
+
+  .gfield.c-input__field {
+
+    input {
+      background: none;
+      border-color: $color__white;
+      color: $color__white;
+      @include bp-3 {
+        font-size: $pop-fs-lg;
+      }
+
+      &[aria-invalid='true'] {
+        border-color: $color__red;
+      }
+    }
+
+    .gfield_label {
+      color: $color__white;
+      @include bp-3 {
+        font-size: $pop-fs-lg;
+      }
+    }
+  }
+
+  .spu-close {
+    color: $color__white !important;
+  }
+}

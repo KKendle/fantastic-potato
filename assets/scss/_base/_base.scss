@@ -1,0 +1,311 @@
+// part of new sass update
+@use 'sass:color';
+@import url('https://fonts.googleapis.com/css?family=Overpass:400,700&display=swap');
+
+:root {
+  // colors
+  --color__white: hsl(0, 0%, 100%);
+  --color__primary: hsl(270.6, 43.4%, 52.2%);
+  --color__secondary: hsl(18.1, 100%, 68.8%);
+  --color__copy: hsl(232, 10.2%, 28.8%);
+  --color__copy--mute: hsl(232, 10.2%, 28.8%);
+  --color__cream: hsl(12, 45.5%, 97.8%);
+
+  // theme colors
+  --theme__header--secondary: var(--color__cream);
+  --theme__header--primary: var(--color__cream);
+  --theme__bg: var(--color__cream);
+
+  // spacing
+  --space__1: .25rem;
+  --space__2: .5rem;
+  --space__3: 1rem;
+  --space__4: 1.5rem;
+  --space__5: 2rem;
+  --space__6: 3rem;
+  --space__7: 4rem;
+  --space__default: var(--space__3);
+
+  /* typography */
+  --baseFontSize: 1.125rem; /* 18px */
+  --baseline: 1.4;
+  --letterspacing__caps: .05em; // for uppercase copy
+
+  /* baseline amounts */
+  --vr__05: calc(1rem * (var(--baseline) * .5));
+  --vr__1: calc(1rem * var(--baseline));
+  --vr__15: calc(1rem * (var(--baseline) * 1.5));
+  --vr__2: calc(1rem * (var(--baseline) * 2));
+  --vr__25: calc(1rem * (var(--baseline) * 2.5));
+  --vr__3: calc(1rem * (var(--baseline) * 3));
+  --vr__4: calc(1rem * (var(--baseline) * 4));
+  --vr__default: var(--vr__1);
+
+  // gutter
+  --gutter: var(--space__4);
+}
+
+// so grid can work
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: var(--theme__bg);
+  color: $color__copy;
+  color: var(--color__copy);
+  font-family: $font__body;
+  font-size: 1.125rem;
+  font-size: var(--baseFontSize);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: $baseline;
+  line-height: var(--baseline);
+  text-align: left;
+  text-indent: 0;
+  text-shadow: none;
+  text-transform: initial;
+  @include for-palm-until {
+    word-wrap: break-word;
+  }
+}
+
+// the 'main' main content
+#content {
+  overflow: hidden; // removes horizontal scrollbar for pulled content
+  padding-left: $vr__05;
+  padding-left: var(--vr__05);
+  padding-right: $vr__05;
+  padding-right: var(--vr__05);
+  @include for-palm-up {
+    padding-left: $vr__1;
+    padding-left: var(--vr__1);
+    padding-right: $vr__1;
+    padding-right: var(--vr__1);
+  }
+}
+
+// focus state
+:focus:not([tabindex='-1']) {
+  outline: .125rem dashed #ffa500;
+  outline-offset: .125rem;
+}
+
+/// Default color and font for common elements. Specifics/overrides later on.
+/// @author Kevin Kendle
+/// @group Base
+/// @since v3.0.0
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+figure,
+blockquote,
+button,
+a,
+label,
+input {
+  color: $color__copy;
+  color: var(--color__copy);
+  font-family: $font__body;
+  line-height: $baseline;
+  line-height: var(--baseline);
+}
+
+/// Default spacing for common elements. Specifics/overrides later on.
+/// @author Kevin Kendle
+/// @group Base
+/// @since v3.0.0
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+figure,
+blockquote,
+button,
+input,
+article,
+.widget {
+  margin-bottom: $vr__default;
+  margin-bottom: var(--vr__default);
+  margin-top: 0;
+}
+
+/// Default color and spacing.
+/// @author Kevin Kendle
+/// @group Base
+/// @since v3.0.0
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $color__copy;
+  color: var(--color__primary);
+  font-family: $font__header;
+  font-size: var(--fontSize);
+  font-weight: 300;
+  line-height: 1.18;
+  margin-bottom: $vr__default;
+  margin-bottom: var(--vr__default);
+}
+
+/// Heading 1 size
+/// @author Kevin Kendle
+/// @group Base
+/// @since v3.0.0
+h1 {
+  font-size: 3.0625em;
+  @include for-lap-up {
+    font-size: 5em;
+  }
+}
+
+/// Heading 2 size
+/// @author Kevin Kendle
+/// @group Base
+/// @since v3.0.0
+h2 {
+  font-size: 1.875em;
+  @include for-lap-up {
+    font-size: 2.5em;
+  }
+}
+
+/// Heading 3 size
+/// @author Kevin Kendle
+/// @group Base
+/// @since v3.0.0
+h3 {
+  font-size: 1.5em;
+  @include for-lap-up {
+    font-size: 2em;
+  }
+}
+
+/// Default link styles
+/// @author Kevin Kendle
+/// @group Base
+/// @since v3.0.0
+a {
+  // color.scale is from new sass update
+  $shadow-color: color.scale($color__primary, $lightness: 50%);
+  --shadow-y: -.2em;
+  color: $color__primary;
+  color: var(--color__copy);
+  box-shadow: inset 0 -.1em 0 $shadow-color;
+  box-shadow: inset 0 var(--shadow-y) 0 $shadow-color;
+  text-decoration: none;
+  transition: box-shadow 100ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    box-shadow: inset 0 -.85em 0 $shadow-color;
+    --shadow-y: -.85em;
+  }
+
+  &--noStyle {
+    box-shadow: unset;
+    text-decoration: none;
+  }
+}
+
+/// Default list styling.
+/// @author Kevin Kendle
+/// @group Base
+/// @since v3.0.0
+ul,
+ol {
+  list-style-type: disc;
+  margin-bottom: $space__4;
+  margin-bottom: var(--space__4);
+  padding: 0 0 0 40px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  li {
+
+    ul,
+    ol {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/// Default color and spacing. Remove `margin-bottom` on `:last-child` so the Sections can all have even spacing between them.
+/// @author Kevin Kendle
+/// @group Base
+/// @since v3.0.0
+p {
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/// Default image styling
+/// @author Kevin Kendle
+/// @group Base
+/// @since v2.0.0
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/// Default figure styling
+/// @author Kevin Kendle
+/// @group Base
+/// @since v3.0.0
+figure {
+  margin-bottom: 0;
+}
+
+/// Default blockquote styling
+/// @author Kevin Kendle
+/// @group Base
+/// @since v3.0.0
+blockquote {
+  border-left: .25rem solid var(--color__primary);
+  margin-top: var(--vr__default);
+  padding: var(--vr__05);
+}
+
+label {
+  display: block;
+}
+
+input {
+  border-color: currentColor;
+  padding: .5rem .325rem .3rem;
+}
+
+[type='submit'] {
+  cursor: pointer;
+}
+
+main {
+  padding-top: $vr__default;
+  padding-top: var(--vr__default);
+}
+
+.widget {
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

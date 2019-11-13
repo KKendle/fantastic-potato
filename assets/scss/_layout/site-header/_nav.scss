@@ -1,0 +1,47 @@
+/// Primary site navigation
+/// @author Kevin Kendle
+/// @group Site Header
+/// @since v3.0.0
+.c-navigation {
+
+  .page_item {
+
+    a {
+      box-shadow: none;
+      display: inline-block;
+      position: relative;
+      word-wrap: anywhere;
+
+      &:hover,
+      &:focus {
+
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &::after {
+        content: '';
+        border-bottom: .125em solid currentColor;
+        bottom: 0;
+        display: block;
+        left: 50%;
+        margin: auto;
+        position: absolute;
+        transform: translateX(-50%);
+        transition: width 200ms ease-in-out;
+        width: 0;
+      }
+    }
+
+    &.current_page_item {
+
+      a {
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

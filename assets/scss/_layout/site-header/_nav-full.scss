@@ -1,0 +1,123 @@
+@use 'sass:color';
+/// Full (burger) site navigation. Secondary and Primary navigation items.
+/// This is specific to the burger navigation styles and not for the primary or secondary navigation styles.
+/// @author Kevin Kendle
+/// @group Site Header
+/// @since v3.0.0
+.c-navigation__full {
+  $self: &;
+  $nav__bg: $color__white;
+  $nav__primary: $color__copy;
+  --nav__primary: var(--color__copy);
+  background-color: color.adjust($theme__header--secondary, $alpha: -.05);
+  height: 100vh;
+  left: 0;
+  opacity: 0;
+  overflow-y: auto;
+  padding-top: 100px;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transform: translate(37%, -37%) scale(.2);
+  transition: transform 250ms ease-in-out, opacity 250ms ease-in-out;
+  width: 100vw;
+  z-index: $zIndex__nav;
+  @include for-lap-up {
+    display: none;
+  }
+
+  &.is-active {
+    opacity: 1;
+    pointer-events: visible;
+    transform: translate(0) scale(1);
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    @include for-wrist-up {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  .page_item {
+    border-bottom: .125rem solid $nav__primary;
+
+    a {
+      color: $nav__primary;
+      color: var(--nav__primary);
+      display: inline-block;
+      letter-spacing: $letterspacing__caps;
+      letter-spacing: var(--letterspacing__caps);
+      margin-bottom: $space__2;
+      margin-bottom: var(--space__2);
+      padding: $space__2 $space__2 $space__1;
+      padding: var(--space__2) var(--space__2) var(--space__1);
+      text-transform: uppercase;
+    }
+  }
+
+  nav {
+    padding-bottom: $vr__default;
+    padding-bottom: var(--vr__default);
+
+    &:last-of-type {
+      padding-bottom: $vr__4;
+      padding-bottom: var(--vr__4);
+    }
+  }
+
+  #navigation__primary--mobile {
+    font-size: 1.25em;
+
+    .page_item {
+      margin-bottom: $space__2;
+      margin-bottom: var(--space__2);
+      padding-left: $vr__05;
+      padding-left: var(--vr__05);
+      padding-right: $vr__05;
+      padding-right: var(--vr__05);
+      text-align: center;
+      width: 100%;
+      @include for-palm-up {
+        padding-left: $vr__1;
+        padding-left: var(--vr__1);
+        padding-right: $vr__1;
+        padding-right: var(--vr__1);
+      }
+    }
+  }
+
+  #navigation__secondary {
+    padding-left: $vr__05;
+    padding-left: var(--vr__05);
+    padding-right: $vr__05;
+    padding-right: var(--vr__05);
+    @include for-palm-up {
+      padding-left: $vr__1;
+      padding-left: var(--vr__1);
+      padding-right: $vr__1;
+      padding-right: var(--vr__1);
+    }
+
+    ul {
+      justify-content: center;
+    }
+
+    .page_item {
+      border: 0;
+
+      &:not(:last-child) {
+
+        &::after {
+          color: $nav__primary;
+          color: var(--nav__primary);
+          content: '|';
+          margin-left: .25em;
+          margin-right: .25em;
+        }
+      }
+    }
+  }
+}

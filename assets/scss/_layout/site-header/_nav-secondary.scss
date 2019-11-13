@@ -1,0 +1,58 @@
+/// Secondary site navigation. This is NOT for the burger nav styles. See `_nav-full.scss` for burger nav styles.
+/// @author Kevin Kendle
+/// @group Site Header
+/// @since v3.0.0
+.c-navigation__secondary {
+  background-color: $theme__header--secondary;
+  background-color: var(--theme__header--secondary);
+  position: relative;
+  z-index: $zIndex__nav--close;
+  padding-left: $vr__05;
+  padding-left: var(--vr__05);
+  padding-right: $vr__05;
+  padding-right: var(--vr__05);
+  @include for-palm-up {
+    padding-left: $vr__1;
+    padding-left: var(--vr__1);
+    padding-right: $vr__1;
+    padding-right: var(--vr__1);
+  }
+
+  .l-row {
+    align-items: center;
+    @include for-lap-up {
+      justify-content: flex-end;
+    }
+  }
+
+  .c-navigation {
+
+    &__search,
+    &__social,
+    &__burger {
+      flex: 0 1 auto;
+    }
+
+    &__search,
+    &__social {
+      margin-right: $space__2;
+      margin-right: var(--space__2);
+    }
+
+    &__burger {
+      flex-grow: 2;
+      text-align: right;
+      @include for-lap-up {
+        display: none;
+      }
+    }
+  }
+
+  .c-search__form,
+  .c-socialLinks {
+    padding-top: .25em;
+    @include for-lap-up {
+      padding-top: .5em;
+    }
+  }
+}

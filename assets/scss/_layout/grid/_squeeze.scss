@@ -1,0 +1,14 @@
+/// Default margins for content blocks. Nearly always used unless element(s) need to be flush with the sides.
+///
+/// Place inside Columns, on their own element.
+/// @author Kevin Kendle
+/// @group Layout
+/// @since v3.0.0
+.l-squeeze {
+  $squeeze: $gutter;
+  --squeeze: var(--gutter);
+  padding-left: $squeeze;
+  padding-left: var(--squeeze);
+  padding-right: $squeeze;
+  padding-right: var(--squeeze);
+}
